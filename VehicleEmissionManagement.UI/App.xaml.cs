@@ -7,7 +7,6 @@ using VehicleEmissionManagement.Data.Repositoriess;
 using VehicleEmissionManagement.UI.Viewss;
 using VehicleEmissionManagement.UI.ViewModelss;
 using VehicleEmissionManagement.Core.Servicess;
-using Microsoft.EntityFrameworkCore;
 
 namespace VehicleEmissionManagement.UI
 {
@@ -31,29 +30,27 @@ namespace VehicleEmissionManagement.UI
 
         private void ConfigureServices(ServiceCollection services)
         {
-            // Database - sử dụng Transient để tránh xung đột
-            services.AddDbContext<ApplicationDbContext>(options => { }, ServiceLifetime.Transient);
+            // Database
+            services.AddDbContext<ApplicationDbContext>();
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IVehicleRepository, VehicleRepository>();
-            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-            services.AddScoped<IInspectionRepository, InspectionRepository>();
-            services.AddScoped<INotificationRepository, NotificationRepository>();
 
             // Services
             services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IOwnerService, OwnerService>();
-            services.AddScoped<AppointmentService>();  // Thêm dịch vụ này
+            services.AddScoped<IOwnerService, OwnerService>();  // Thêm dòng này
 
             // ViewModels
             services.AddTransient<LoginViewModel>();
             services.AddTransient<RegisterViewModel>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            services.AddScoped<IInspectionRepository, InspectionRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddTransient<PoliceDashboard>();
             services.AddTransient<StationViewModel>();
 
-            // Views
-            services.AddTransient<PoliceDashboard>();
-            services.AddTransient<StationDashboard>();
+
         }
     }
 }
