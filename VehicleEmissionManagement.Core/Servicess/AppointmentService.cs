@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using VehicleEmissionManagement.Core.Interfacess;
 using VehicleEmissionManagement.Core.Modelss;
 
-namespace VehicleEmissionManagement.Services
+namespace VehicleEmissionManagement.Core.Servicess
 {
     public class AppointmentService
     {

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "u8rlU1Gfn98=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\trant\\OneDrive\\Desktop\\prn212\\prj-prn212\\VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\trant\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.1\\microsoft.extensions.dependencyinjection.9.0.1.nupkg.sha512",
+    "C:\\Users\\trant\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.1\\microsoft.extensions.dependencyinjection.abstractions.9.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

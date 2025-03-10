@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleEmissionManagement.Core.Servicess
+namespace VehicleEmissionManagement.UI.Viewss.Commands
 {
-    internal class ReportService
+    internal class RelayCommand
     {
     }
 }
