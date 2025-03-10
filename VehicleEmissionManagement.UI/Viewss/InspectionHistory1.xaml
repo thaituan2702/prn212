@@ -1,0 +1,32 @@
+﻿<!-- InspectionHistory.xaml -->
+<Window x:Class="VehicleEmissionManagement.UI.Viewss.InspectionHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Inspection History" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="HistoryGrid" 
+                  AutoGenerateColumns="False" 
+                  Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Inspection Date" 
+                                  Binding="{Binding InspectionDate, StringFormat=dd/MM/yyyy}"
+                                  Width="*"/>
+                <DataGridTextColumn Header="Result" 
+                                  Binding="{Binding Result}"
+                                  Width="*"/>
+                <DataGridTextColumn Header="CO2 Emission" 
+                                  Binding="{Binding CO2Emission}"
+                                  Width="*"/>
+                <DataGridTextColumn Header="HC Emission" 
+                                  Binding="{Binding HCEmission}"
+                                  Width="*"/>
+                <DataGridTextColumn Header="NOx Emission" 
+                                  Binding="{Binding NOxEmission}"
+                                  Width="*"/>
+                <DataGridTextColumn Header="Expiry Date" 
+                                  Binding="{Binding ExpiryDate, StringFormat=dd/MM/yyyy}"
+                                  Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

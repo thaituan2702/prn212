@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Page Update="Viewss\AdminDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\InspectionDetailsDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\InspectionHistory1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\InspectorDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\NotificationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\OwnerDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\PoliceDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\ProfileManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\RegisterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\ReportsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\ScheduleInspection.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\StationDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\UserDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Viewss\VehicleDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

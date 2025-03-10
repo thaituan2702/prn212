@@ -1,0 +1,31 @@
+﻿<!-- ReportsWindow.xaml -->
+<Window x:Class="VehicleEmissionManagement.UI.Viewss.ReportsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reports" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Reports" 
+                     FontSize="24" 
+                     Margin="0,0,0,20"/>
+
+            <!-- Add Report filters and controls here -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <DatePicker x:Name="StartDate" Width="200" Margin="0,0,10,0"/>
+                <DatePicker x:Name="EndDate" Width="200" Margin="0,0,10,0"/>
+                <Button Content="Generate Report" 
+                        Click="GenerateReport_Click"
+                        Width="120"/>
+            </StackPanel>
+
+            <!-- Report Data Grid -->
+            <DataGrid x:Name="ReportGrid" 
+                     AutoGenerateColumns="False" 
+                     Height="300">
+                <DataGrid.Columns>
+                    <!-- Add report columns here -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
