@@ -113,8 +113,6 @@ namespace VehicleEmissionManagement.Data.Contextt
                 .HasOne(n => n.User)
                 .WithMany()
                 .HasForeignKey(n => n.UserID);
-
-
         }
 
     }

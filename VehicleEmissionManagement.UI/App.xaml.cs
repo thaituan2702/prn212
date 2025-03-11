@@ -48,9 +48,6 @@ namespace VehicleEmissionManagement.UI
             services.AddScoped<IInspectionRepository, InspectionRepository>();
             services.AddScoped<INotificationRepository, NotificationRepository>();
             services.AddTransient<PoliceDashboard>();
-            services.AddTransient<StationViewModel>();
-
-
         }
     }
 }
