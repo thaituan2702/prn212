@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using VehicleEmissionManagement.Core.Interfacess;
@@ -20,31 +21,60 @@ namespace VehicleEmissionManagement.Data.Repositoriess
 
         public async Task<List<Appointment>> GetAppointmentsByStationIdAsync(int stationId, DateTime? date = null, string status = null)
         {
+            Debug.WriteLine($"StationRepository.GetAppointmentsByStationIdAsync called with stationId: {stationId}, date: {date}, status: {status}");
             try
             {
                 using (var context = await _contextFactory.CreateDbContextAsync())
                 {
+                    // Log để kiểm tra ngày tháng
+                    if (date.HasValue)
+                    {
+                        Debug.WriteLine($"Looking for appointments on {date.Value:yyyy-MM-dd}, time component: {date.Value:HH:mm:ss.fff}");
+                    }
+
+                    // Truy vấn cơ bản
                     var query = context.Appointments
                         .AsNoTracking()
                         .Include(a => a.Vehicle)
                             .ThenInclude(v => v.Owner)
+                        .Include(a => a.Station)
                         .Where(a => a.StationID == stationId);
 
+                    // Xử lý ngày đặc biệt
                     if (date.HasValue)
                     {
-                        query = query.Where(a => a.AppointmentDate.Date == date.Value.Date);
+                        // Chuyển sang query giữa đầu ngày và cuối ngày để truy vấn chính xác hơn
+                        var startOfDay = date.Value.Date;
+                        var endOfDay = startOfDay.AddDays(1).AddTicks(-1);
+
+                        Debug.WriteLine($"Date range: {startOfDay:yyyy-MM-dd HH:mm:ss.fff} to {endOfDay:yyyy-MM-dd HH:mm:ss.fff}");
+
+                        query = query.Where(a => a.AppointmentDate >= startOfDay && a.AppointmentDate <= endOfDay);
                     }
 
+                    // Xử lý status
                     if (!string.IsNullOrEmpty(status) && status != "All")
                     {
                         query = query.Where(a => a.Status == status);
                     }
 
-                    return await query.OrderByDescending(a => a.AppointmentDate).ToListAsync();
+                    // Thực hiện truy vấn
+                    var appointments = await query.OrderByDescending(a => a.AppointmentDate).ToListAsync();
+
+                    // Log kết quả để debug
+                    Debug.WriteLine($"Found {appointments.Count} appointments");
+                    foreach (var app in appointments)
+                    {
+                        Debug.WriteLine($"Appointment ID: {app.AppointmentID}, Date: {app.AppointmentDate:dd/MM/yyyy HH:mm}, Status: {app.Status}, Vehicle: {app.Vehicle?.PlateNumber ?? "N/A"}");
+                    }
+
+                    return appointments;
                 }
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"Error in StationRepository.GetAppointmentsByStationIdAsync: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
                 throw new Exception($"Lỗi khi lấy danh sách lịch hẹn: {ex.Message}", ex);
             }
         }
@@ -114,8 +144,37 @@ namespace VehicleEmissionManagement.Data.Repositoriess
                 throw new Exception($"Lỗi khi từ chối lịch hẹn: {ex.Message}", ex);
             }
         }
+        public async Task<string> TestDirectQuery(int stationId, DateTime date)
+        {
+            try
+            {
+                using (var context = await _contextFactory.CreateDbContextAsync())
+                {
+                    var startOfDay = date.Date;
+                    var endOfDay = startOfDay.AddDays(1).AddTicks(-1);
 
-        public async Task<List<InspectionRecord>> GetStationInspectionHistoryAsync(int stationId, DateTime startDate, DateTime endDate)
+                    // Tạo câu SQL để kiểm tra
+                    var sql = $@"
+                        SELECT COUNT(*) 
+                        FROM Appointments 
+                        WHERE StationID = {stationId} 
+                        AND AppointmentDate >= '{startOfDay:yyyy-MM-dd HH:mm:ss.fff}' 
+                        AND AppointmentDate <= '{endOfDay:yyyy-MM-dd HH:mm:ss.fff}'";
+
+                    // Thực hiện raw SQL query
+                    var count = await context.Database.ExecuteSqlRawAsync(sql);
+
+                    return $"Query executed. Count: {count}";
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"Error executing direct query: {ex.Message}";
+            }
+        }
+    
+
+public async Task<List<InspectionRecord>> GetStationInspectionHistoryAsync(int stationId, DateTime startDate, DateTime endDate)
         {
             try
             {

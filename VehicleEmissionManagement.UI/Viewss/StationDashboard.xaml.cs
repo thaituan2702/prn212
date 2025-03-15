@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using VehicleEmissionManagement.Core.Interfacess;
 using VehicleEmissionManagement.Core.Servicess;
@@ -26,7 +27,16 @@ namespace VehicleEmissionManagement.UI.Viewss
             _stationService = ((App)Application.Current)._serviceProvider.GetService<IStationService>();
             _notificationRepository = ((App)Application.Current)._serviceProvider.GetService<INotificationRepository>();
 
-            Title = $"Trạm Đăng kiểm - {AuthService.CurrentUser.FullName}";
+            // Log thông tin về user để debug
+            if (AuthService.CurrentUser != null)
+            {
+                Debug.WriteLine($"StationDashboard initialized for User: {AuthService.CurrentUser.FullName}, ID: {AuthService.CurrentUser.UserID}, Role: {AuthService.CurrentUser.Role}");
+                Title = $"Trạm Đăng kiểm - {AuthService.CurrentUser.FullName}";
+            }
+            else
+            {
+                Debug.WriteLine("AuthService.CurrentUser is null!");
+            }
         }
 
         private void HideAllPanels()
@@ -40,20 +50,31 @@ namespace VehicleEmissionManagement.UI.Viewss
         {
             try
             {
+                Debug.WriteLine("AppointmentManagement button clicked");
                 HideAllPanels();
 
-                // Mỗi lần click sẽ tạo mới view để tránh vấn đề context
+                // Tạo mới StationViewModel và đặt ngày là ngày có dữ liệu (15/3/2025)
+                var viewModel = new StationViewModel(_stationService);
+                viewModel.SelectedDate = new DateTime(2025, 3, 15);
+                viewModel.SelectedStatus = "All";
+
+                // Tạo view và gán ViewModel
                 _appointmentView = new AppointmentManagementView
                 {
-                    DataContext = new StationViewModel(_stationService)
+                    DataContext = viewModel
                 };
 
+                // Thêm vào panel và hiển thị
                 AppointmentPanel.Children.Clear();
                 AppointmentPanel.Children.Add(_appointmentView);
                 AppointmentPanel.Visibility = Visibility.Visible;
+
+                Debug.WriteLine("AppointmentManagementView added to AppointmentPanel");
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"Error in AppointmentManagement_Click: {ex.Message}");
+                Debug.WriteLine($"Stack trace: {ex.StackTrace}");
                 MessageBox.Show($"Lỗi khi mở quản lý lịch hẹn: {ex.Message}",
                               "Lỗi",
                               MessageBoxButton.OK,
