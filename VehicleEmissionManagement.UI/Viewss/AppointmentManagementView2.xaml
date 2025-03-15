@@ -1,0 +1,203 @@
+﻿<UserControl x:Class="VehicleEmissionManagement.UI.Viewss.AppointmentManagementView2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:VehicleEmissionManagement.UI.Converters">
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:PendingToVisibilityConverter x:Key="PendingToVisibilityConverter"/>
+        <converters:ConfirmedToVisibilityConverter x:Key="ConfirmedToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                  Text="Quản lý Lịch hẹn Đăng kiểm. Hãy thử chọn ngày khác hoặc bỏ lọc trạng thái." 
+                  FontSize="24" 
+                  FontWeight="Bold" 
+                  Margin="0,0,0,20"
+                  TextAlignment="Center"
+                  VerticalAlignment="Center"
+                  Visibility="{Binding HasNoAppointments, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+        <!-- Filter Controls -->
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" 
+                       Text="Ngày:" 
+                       VerticalAlignment="Center" 
+                       Margin="0,0,10,0"/>
+
+            <DatePicker Grid.Column="1" 
+                       SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                       Width="150" 
+                       Margin="0,0,20,0"/>
+
+            <TextBlock Grid.Column="2" 
+                       Text="Trạng thái:" 
+                       VerticalAlignment="Center" 
+                       Margin="0,0,10,0"/>
+
+            <ComboBox Grid.Column="3" 
+                     SelectedValue="{Binding SelectedStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     Width="150" 
+                     HorizontalAlignment="Left">
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem Content="Pending"/>
+                <ComboBoxItem Content="Confirmed"/>
+                <ComboBoxItem Content="Completed"/>
+                <ComboBoxItem Content="Cancelled"/>
+            </ComboBox>
+
+            <Button Grid.Column="4" 
+                    Content="Tải lại" 
+                    Command="{Binding LoadAppointmentsCommand}" 
+                    Width="100" 
+                    Background="#3498db"
+                    Foreground="White"
+                    Height="35"/>
+        </Grid>
+
+        <!-- DEBUG SECTION -->
+        <Border Grid.Row="2" Visibility="Collapsed" Background="#ffeeee" BorderBrush="#ffaaaa" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+            <StackPanel>
+                <TextBlock Text="DEBUG INFO:" FontWeight="Bold"/>
+                <TextBlock Text="{Binding DebugInfo}" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Empty state message -->
+        <TextBlock Grid.Row="2" 
+                  Text="Không có lịch hẹn nào. Hãy thử chọn ngày khác hoặc bỏ lọc trạng thái."
+                  FontSize="16"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Visibility="{Binding HasNoAppointments, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+        <!-- Loading indicator -->
+        <StackPanel Grid.Row="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}">
+            <TextBlock Text="Đang tải dữ liệu..." 
+                      FontSize="16"
+                      HorizontalAlignment="Center"
+                      Margin="0,0,0,10"/>
+            <ProgressBar Width="200" Height="20" IsIndeterminate="True"/>
+        </StackPanel>
+
+        <!-- Appointments DataGrid -->
+        <DataGrid Grid.Row="2" 
+                  ItemsSource="{Binding Appointments}" 
+                  SelectedItem="{Binding SelectedAppointment}"
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True" 
+                  CanUserAddRows="False"
+                  GridLinesVisibility="Horizontal"
+                  AlternatingRowBackground="#f5f6fa"
+                  Background="White"
+                  BorderThickness="1"
+                  BorderBrush="#dcdde1"
+                  Visibility="{Binding HasAppointments, Converter={StaticResource BoolToVisibilityConverter}}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Biển số" 
+                                   Binding="{Binding Vehicle.PlateNumber}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Tên chủ xe" 
+                                   Binding="{Binding Vehicle.Owner.FullName}" 
+                                   Width="150"/>
+
+                <DataGridTextColumn Header="Liên hệ" 
+                                   Binding="{Binding Vehicle.Owner.Phone}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Ngày đặt lịch" 
+                                   Binding="{Binding AppointmentDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Giờ" 
+                                   Binding="{Binding AppointmentDate, StringFormat='{}{0:HH:mm}'}" 
+                                   Width="70"/>
+
+                <DataGridTextColumn Header="Trạng thái" 
+                                   Binding="{Binding Status}" 
+                                   Width="100"/>
+
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <!-- Buttons for Pending status -->
+                                <Button Content="Xác nhận" 
+                                        Command="{Binding DataContext.ConfirmAppointmentCommand, 
+                                                 RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}"
+                                        Margin="0,0,5,0"
+                                        Width="70" 
+                                        Height="25"
+                                        Background="#2ecc71"
+                                        Foreground="White"
+                                        Visibility="{Binding Status, Converter={StaticResource PendingToVisibilityConverter}}"/>
+
+                                <Button Content="Từ chối" 
+                                        Command="{Binding DataContext.RejectAppointmentCommand, 
+                                                 RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}"
+                                        Width="70" 
+                                        Height="25"
+                                        Background="#e74c3c"
+                                        Foreground="White"
+                                        Visibility="{Binding Status, Converter={StaticResource PendingToVisibilityConverter}}"/>
+
+                                <!-- Button for Confirmed status -->
+                                <Button Content="Bắt đầu kiểm định" 
+                                        Command="{Binding DataContext.StartInspectionCommand, 
+                                                 RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}"
+                                        Width="120" 
+                                        Height="25"
+                                        Background="#3498db"
+                                        Foreground="White"
+                                        Visibility="{Binding Status, Converter={StaticResource ConfirmedToVisibilityConverter}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Status}" Value="Pending">
+                            <Setter Property="Background" Value="#fffde7"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Confirmed">
+                            <Setter Property="Background" Value="#e3f2fd"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Completed">
+                            <Setter Property="Background" Value="#e8f5e9"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Status}" Value="Cancelled">
+                            <Setter Property="Background" Value="#ffebee"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+    </Grid>
+</UserControl>

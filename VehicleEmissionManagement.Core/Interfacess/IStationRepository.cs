@@ -7,6 +7,7 @@ namespace VehicleEmissionManagement.Core.Interfacess
 {
     public interface IStationRepository
     {
+        Task<List<Appointment>> GetAllAppointmentsAsync();
         Task<List<Appointment>> GetAppointmentsByStationIdAsync(int stationId, DateTime? date = null, string status = null);
         Task<bool> ConfirmAppointmentAsync(int appointmentId);
         Task<bool> RejectAppointmentAsync(int appointmentId, string reason);

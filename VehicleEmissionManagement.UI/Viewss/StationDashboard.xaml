@@ -3,67 +3,120 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="Station Dashboard" Height="700" Width="1000">
-    <Grid>
-        <DockPanel>
-            <!-- Left sidebar menu -->
-            <StackPanel DockPanel.Dock="Left" Background="#27ae60" Width="200">
-                <TextBlock Text="Quản lý Trạm Đăng kiểm" Foreground="White" 
-                          FontSize="20" TextWrapping="Wrap" TextAlignment="Center" 
-                          Margin="10,20,10,40"/>
+        xmlns:converters="clr-namespace:VehicleEmissionManagement.UI.Converters"
+        Title="Quản lý Trạm Đăng kiểm" 
+        Height="700" 
+        Width="1100"
+        WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+        <ResourceDictionary>
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+            <converters:PendingToVisibilityConverter x:Key="PendingToVisibilityConverter"/>
+            <converters:ConfirmedToVisibilityConverter x:Key="ConfirmedToVisibilityConverter"/>
+
+            <!-- Style for menu buttons -->
+            <Style x:Key="MenuButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Height" Value="45"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="5,3"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Padding" Value="15,0,0,0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#218c54"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#1a6e42"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Menu Panel -->
+        <Grid Grid.Column="0" Background="#27ae60">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Logo & Title -->
+            <StackPanel Grid.Row="0" Margin="15,30,15,40">
+                <TextBlock Text="TRẠM ĐĂNG KIỂM" 
+                           Foreground="White" 
+                           FontSize="22" 
+                           FontWeight="Bold"
+                           TextAlignment="Center"/>
+                <TextBlock Text="Hệ thống quản lý" 
+                           Foreground="White" 
+                           FontSize="14"
+                           TextAlignment="Center"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+
+            <!-- Menu Items -->
+            <StackPanel Grid.Row="1" Margin="10,0">
                 <Button Content="Lịch hẹn đăng kiểm" 
-                        Margin="10,5" 
-                        Height="40" 
+                        Style="{StaticResource MenuButtonStyle}" 
                         Click="AppointmentManagement_Click"/>
 
                 <Button Content="Báo cáo thống kê" 
-                        Margin="10,5" 
-                        Height="40" 
+                        Style="{StaticResource MenuButtonStyle}" 
                         Click="Reports_Click"/>
 
                 <Button Content="Thông báo" 
-                        Margin="10,5" 
-                        Height="40" 
+                        Style="{StaticResource MenuButtonStyle}" 
                         Click="Notifications_Click"/>
 
                 <Button Content="Thông tin trạm" 
-                        Margin="10,5" 
-                        Height="40" 
+                        Style="{StaticResource MenuButtonStyle}" 
                         Click="StationProfile_Click"/>
-
-                <Button Content="Đăng xuất" 
-                        Margin="10,5" 
-                        Height="40" 
-                        Click="LogoutButton_Click"/>
             </StackPanel>
 
-            <!-- Main Content Area -->
-            <Grid x:Name="MainContent" Background="#ecf0f1">
-                <!-- Welcome Panel (Default view) -->
-                <Grid x:Name="WelcomePanel" Visibility="Visible">
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Chào mừng đến với Hệ thống Quản lý Trạm Đăng kiểm" 
-                                  FontSize="24" 
-                                  TextAlignment="Center"
-                                  Margin="0,0,0,20"/>
+            <!-- User Info & Logout -->
+            <StackPanel Grid.Row="2" Margin="15,0,15,20">
+                <Separator Background="#ffffff" Opacity="0.2" Margin="0,0,0,15"/>
 
-                        <TextBlock Text="Hãy lựa chọn chức năng từ menu bên trái để bắt đầu" 
-                                  FontSize="16" 
-                                  TextAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                <TextBlock Text="{Binding CurrentUserName, StringFormat='Xin chào, {0}'}" 
+                           Foreground="White" 
+                           Margin="5,0,0,5"/>
 
-                <!-- Appointment Management Panel -->
-                <Grid x:Name="AppointmentPanel" Visibility="Collapsed">
-                    <!-- Content will be loaded from AppointmentManagementView -->
-                </Grid>
+                <Button Content="Đăng xuất" 
+                        Style="{StaticResource MenuButtonStyle}" 
+                        Background="#e74c3c"
+                        Click="LogoutButton_Click"/>
+            </StackPanel>
+        </Grid>
 
-                <!-- Reports Panel -->
-                <Grid x:Name="ReportsPanel" Visibility="Collapsed">
-                    <!-- Content will be loaded from StationReportsView -->
-                </Grid>
-            </Grid>
-        </DockPanel>
+        <!-- Main Content Area -->
+        <Grid Grid.Column="1" Background="#f5f5f5">
+            <Grid x:Name="MainContent"/>
+        </Grid>
     </Grid>
 </Window>
