@@ -1,0 +1,276 @@
+﻿<Window x:Class="VehicleEmissionManagement.UI.Viewss.InspectionInputView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:VehicleEmissionManagement.UI.Converters"
+        Title="Emission Inspection" 
+        Height="650" 
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                  Text="Vehicle Emission Inspection" 
+                  FontSize="24" 
+                  FontWeight="Bold"
+                  Margin="0,0,0,20"/>
+
+        <!-- Main Content -->
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+                <!-- Vehicle Info Section -->
+                <GroupBox Header="Vehicle Information" Margin="0,0,0,20">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Row 1 -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                  Text="Plate Number:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" 
+                                  Text="{Binding Vehicle.PlateNumber}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="2" 
+                                  Text="Manufacture Year:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="0" Grid.Column="3" 
+                                  Text="{Binding Vehicle.ManufactureYear}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+
+                        <!-- Row 2 -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                  Text="Brand:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" 
+                                  Text="{Binding Vehicle.Brand}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="2" 
+                                  Text="Engine Number:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="1" Grid.Column="3" 
+                                  Text="{Binding Vehicle.EngineNumber}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+
+                        <!-- Row 3 -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" 
+                                  Text="Model:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" 
+                                  Text="{Binding Vehicle.Model}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="2" 
+                                  Text="Owner:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="2" Grid.Column="3" 
+                                  Text="{Binding Vehicle.Owner.FullName}" 
+                                  FontWeight="SemiBold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Emission Test Section -->
+                <GroupBox Header="Emission Test Results" Margin="0,0,0,20">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Row 1 -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" 
+                                  Text="CO2 Emission:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <StackPanel Grid.Row="0" Grid.Column="1" 
+                                   Orientation="Horizontal"
+                                   Margin="0,5">
+                            <TextBox Text="{Binding CO2Emission, UpdateSourceTrigger=PropertyChanged}" 
+                                    Width="100" 
+                                    HorizontalAlignment="Left"/>
+                            <TextBlock Text="g/km" 
+                                      VerticalAlignment="Center" 
+                                      Margin="5,0,0,0"/>
+                            <TextBlock Text="{Binding CO2Standard, StringFormat='(Standard: {0} g/km)'}" 
+                                      VerticalAlignment="Center" 
+                                      Margin="10,0,0,0" 
+                                      Foreground="#7f8c8d"/>
+                        </StackPanel>
+
+                        <!-- Row 2 -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" 
+                                  Text="HC Emission:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" 
+                                   Orientation="Horizontal"
+                                   Margin="0,5">
+                            <TextBox Text="{Binding HCEmission, UpdateSourceTrigger=PropertyChanged}" 
+                                    Width="100" 
+                                    HorizontalAlignment="Left"/>
+                            <TextBlock Text="ppm" 
+                                      VerticalAlignment="Center" 
+                                      Margin="5,0,0,0"/>
+                            <TextBlock Text="{Binding HCStandard, StringFormat='(Standard: {0} ppm)'}" 
+                                      VerticalAlignment="Center" 
+                                      Margin="10,0,0,0" 
+                                      Foreground="#7f8c8d"/>
+                        </StackPanel>
+
+                        <!-- Row 3 -->
+                        <TextBlock Grid.Row="2" Grid.Column="0" 
+                                  Text="NOx Emission:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <StackPanel Grid.Row="2" Grid.Column="1" 
+                                   Orientation="Horizontal"
+                                   Margin="0,5">
+                            <TextBox Text="{Binding NOxEmission, UpdateSourceTrigger=PropertyChanged}" 
+                                    Width="100" 
+                                    HorizontalAlignment="Left"/>
+                            <TextBlock Text="ppm" 
+                                      VerticalAlignment="Center" 
+                                      Margin="5,0,0,0"/>
+                            <TextBlock Text="{Binding NOxStandard, StringFormat='(Standard: {0} ppm)'}" 
+                                      VerticalAlignment="Center" 
+                                      Margin="10,0,0,0" 
+                                      Foreground="#7f8c8d"/>
+                        </StackPanel>
+
+                        <!-- Calculate Button -->
+                        <Button Grid.Row="1" Grid.Column="2" 
+                               Content="Calculate Result" 
+                               Command="{Binding CalculateResultCommand}"
+                               Background="#3498db" 
+                               Foreground="White" 
+                               BorderThickness="0" 
+                               Padding="10,5" 
+                               HorizontalAlignment="Left"/>
+
+                        <!-- Result -->
+                        <TextBlock Grid.Row="1" Grid.Column="3" 
+                                  Text="Result:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5"/>
+                        <TextBlock Grid.Row="2" Grid.Column="3" 
+                                  Text="{Binding Result}" 
+                                  FontSize="20" 
+                                  FontWeight="Bold" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,5">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Result}" Value="Pass">
+                                            <Setter Property="Foreground" Value="#2ecc71"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Result}" Value="Fail">
+                                            <Setter Property="Foreground" Value="#e74c3c"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Comments Section -->
+                <GroupBox Header="Additional Comments" Margin="0,0,0,20">
+                    <TextBox Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged}" 
+                            TextWrapping="Wrap" 
+                            AcceptsReturn="True" 
+                            Height="100" 
+                            Margin="10"/>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Buttons Section -->
+        <StackPanel Grid.Row="2" 
+                   Orientation="Horizontal" 
+                   HorizontalAlignment="Right" 
+                   Margin="0,20,0,0">
+            <Button Content="Save Inspection" 
+                    Command="{Binding SaveInspectionCommand}"
+                    Width="150" 
+                    Height="40" 
+                    Background="#2ecc71" 
+                    Foreground="White" 
+                    BorderThickness="0" 
+                    Margin="0,0,10,0"
+                    IsDefault="True"/>
+            <Button Content="Cancel" 
+                    Width="100" 
+                    Height="40" 
+                    Background="#e74c3c" 
+                    Foreground="White" 
+                    BorderThickness="0"
+                    Click="CancelButton_Click"
+                    IsCancel="True"/>
+        </StackPanel>
+
+        <!-- Loading Overlay -->
+        <Grid Grid.RowSpan="3" 
+             Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Rectangle Fill="Black" Opacity="0.5"/>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Processing..." 
+                         Foreground="White" 
+                         FontSize="16" 
+                         HorizontalAlignment="Center" 
+                         Margin="0,0,0,10"/>
+                <ProgressBar IsIndeterminate="True" 
+                            Width="200" 
+                            Height="20"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
