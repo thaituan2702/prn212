@@ -1,0 +1,197 @@
+﻿<UserControl x:Class="VehicleEmissionManagement.UI.Viewss.StationReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Grid.Row="0" 
+                   Text="Báo cáo Thống kê" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,20"/>
+
+        <!-- Date Range Filter -->
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" 
+                       Text="Từ ngày:" 
+                       VerticalAlignment="Center" 
+                       Margin="0,0,10,0"/>
+
+            <DatePicker Grid.Column="1" 
+                        SelectedDate="{Binding StartDate}" 
+                        Width="150" 
+                        Margin="0,0,20,0"/>
+
+            <TextBlock Grid.Column="2" 
+                       Text="Đến ngày:" 
+                       VerticalAlignment="Center" 
+                       Margin="0,0,10,0"/>
+
+            <DatePicker Grid.Column="3" 
+                        SelectedDate="{Binding EndDate}" 
+                        Width="150" 
+                        Margin="0,0,20,0"/>
+
+            <Button Grid.Column="5" 
+                    Content="Tải báo cáo" 
+                    Command="{Binding LoadReportDataCommand}" 
+                    Width="100" 
+                    Height="30"/>
+        </Grid>
+
+        <!-- Statistics Summary -->
+        <Border Grid.Row="2" 
+                BorderBrush="#dcdde1" 
+                BorderThickness="1" 
+                Margin="0,0,0,20" 
+                Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Total Inspections -->
+                <Border Grid.Column="0" 
+                        BorderBrush="#dcdde1" 
+                        BorderThickness="0,0,1,0" 
+                        Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Tổng số kiểm định" 
+                                  FontWeight="Bold"/>
+                        <TextBlock Text="{Binding TotalInspections}" 
+                                  FontSize="32" 
+                                  Foreground="#3498db" 
+                                  Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Pass Count -->
+                <Border Grid.Column="1" 
+                        BorderBrush="#dcdde1" 
+                        BorderThickness="0,0,1,0" 
+                        Margin="10,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Đạt" 
+                                  FontWeight="Bold"/>
+                        <TextBlock Text="{Binding PassCount}" 
+                                  FontSize="32" 
+                                  Foreground="#2ecc71" 
+                                  Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Fail Count -->
+                <Border Grid.Column="2" 
+                        BorderBrush="#dcdde1" 
+                        BorderThickness="0,0,1,0" 
+                        Margin="10,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Không đạt" 
+                                  FontWeight="Bold"/>
+                        <TextBlock Text="{Binding FailCount}" 
+                                  FontSize="32" 
+                                  Foreground="#e74c3c" 
+                                  Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Pass Rate -->
+                <StackPanel Grid.Column="3" 
+                           Margin="10,0,0,0">
+                    <TextBlock Text="Tỷ lệ đạt" 
+                              FontWeight="Bold"/>
+                    <TextBlock Margin="0,10,0,0" 
+                              FontSize="32" 
+                              Foreground="#f39c12">
+                        <Run Text="{Binding PassRate, StringFormat='{}{0:F1}'}"/>
+                        <Run Text="%"/>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Inspection History -->
+        <DataGrid Grid.Row="3" 
+                 ItemsSource="{Binding InspectionRecords}" 
+                 AutoGenerateColumns="False" 
+                 IsReadOnly="True" 
+                 CanUserAddRows="False"
+                 GridLinesVisibility="Horizontal"
+                 AlternatingRowBackground="#f5f6fa">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" 
+                                   Binding="{Binding RecordID}" 
+                                   Width="60"/>
+
+                <DataGridTextColumn Header="Biển số" 
+                                   Binding="{Binding Vehicle.PlateNumber}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Tên chủ xe" 
+                                   Binding="{Binding Vehicle.Owner.FullName}" 
+                                   Width="150"/>
+
+                <DataGridTextColumn Header="Ngày kiểm định" 
+                                   Binding="{Binding InspectionDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Kết quả" 
+                                   Binding="{Binding Result}" 
+                                   Width="80"/>
+
+                <DataGridTextColumn Header="CO2 (g/km)" 
+                                   Binding="{Binding CO2Emission}" 
+                                   Width="80"/>
+
+                <DataGridTextColumn Header="HC (ppm)" 
+                                   Binding="{Binding HCEmission}" 
+                                   Width="80"/>
+
+                <DataGridTextColumn Header="NOx (ppm)" 
+                                   Binding="{Binding NOxEmission}" 
+                                   Width="80"/>
+
+                <DataGridTextColumn Header="Hạn kiểm định" 
+                                   Binding="{Binding ExpiryDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                   Width="100"/>
+
+                <DataGridTextColumn Header="Ghi chú" 
+                                   Binding="{Binding Comments}" 
+                                   Width="*"/>
+            </DataGrid.Columns>
+
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Result}" Value="Pass">
+                            <Setter Property="Background" Value="#e8f5e9"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Result}" Value="Fail">
+                            <Setter Property="Background" Value="#ffebee"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+    </Grid>
+</UserControl>

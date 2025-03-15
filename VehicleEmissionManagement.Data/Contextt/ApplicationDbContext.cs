@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VehicleEmissionManagement.Core.Modelss;
-using Microsoft.EntityFrameworkCore;
-using VehicleEmissionManagement.Core.Modelss;
 using Microsoft.Extensions.Configuration;
+using VehicleEmissionManagement.Core.Modelss;
+
 namespace VehicleEmissionManagement.Data.Contextt
 {
     public class ApplicationDbContext : DbContext
@@ -17,20 +12,34 @@ namespace VehicleEmissionManagement.Data.Contextt
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<InspectionStation> InspectionStations { get; set; }
         public DbSet<InspectionRecord> InspectionRecords { get; set; }
-        public DbSet<Notification> Notifications { get; set; }  // Thêm dòng này
+        public DbSet<Notification> Notifications { get; set; }
+
+        // Thêm constructor cho dependency injection
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+
+        // Constructor này giữ lại để hỗ trợ các nơi cũ vẫn tạo context trực tiếp
+        public ApplicationDbContext()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var configuration = new ConfigurationBuilder()
-    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) // Thay đổi dòng này
-    .AddJsonFile("appsettings.json")
-    .Build();
+            if (!optionsBuilder.IsConfigured)
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                    .AddJsonFile("appsettings.json")
+                    .Build();
 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnectionStringDB"));
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnectionStringDB"));
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Giữ nguyên phần này
             modelBuilder.Entity<User>()
                 .Property(u => u.CreatedAt)
                 .HasColumnType("datetime2");
