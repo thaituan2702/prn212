@@ -1,36 +1,232 @@
 ﻿<Window x:Class="VehicleEmissionManagement.UI.Viewss.OwnerDashboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Vehicle Owner Dashboard" Height="600" Width="800">
+        Title="Bảng Điều Khiển Chủ Phương Tiện" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Style cho các Button Menu -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#34495e"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#2c3e50"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho các Action Button -->
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#3498db"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2980b9"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1f6aa6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho Green Button -->
+        <Style x:Key="GreenButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+            <Setter Property="Background" Value="#2ecc71"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#27ae60"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#219651"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho Red Button -->
+        <Style x:Key="RedButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+            <Setter Property="Background" Value="#e74c3c"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#c0392b"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#a33025"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Padding" Value="8,5"/>
+            <Setter Property="BorderBrush" Value="#bdc3c7"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- Style cho DataGrid -->
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#bdc3c7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#f9f9f9"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#ecf0f1"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#ecf0f1"/>
+        </Style>
+
+        <!-- Style cho DataGrid Header -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="BorderBrush" Value="#2c3e50"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Left" Background="#2c3e50" Width="200">
-                <TextBlock Text="Owner Dashboard" Foreground="White" FontSize="20" Margin="20,20,20,40"/>
-                <Button Content="My Vehicles" Margin="10,5" Height="40" Click="MyVehicles_Click"/>
-                <Button Content="Schedule Inspection" Margin="10,5" Height="40" Click="Schedule_Click"/>
-                <Button Content="Inspection History" 
-        Margin="10,5" 
-        Height="40" 
-        Click="InspectionHistory_Click"/>
-                <Button Content="Notifications" 
-        Margin="10,5" 
-        Height="40"
-        Click="Notifications_Click"/>
-                <Button Content="Profile Management" 
-                        Margin="10,5" 
-                        Height="40"
-                        Click="ProfileManagement_Click"/>
-                
-                <Button Content="Đăng xuất" Click="LogoutButton_Click" Margin="10,5" Height="40"/>
-            </StackPanel>
+            <!-- Sidebar -->
+            <Border DockPanel.Dock="Left" Background="#8e44ad" Width="220" CornerRadius="0,15,0,0">
+                <StackPanel>
+                    <StackPanel Margin="0,30,0,40">
+                        <TextBlock Text="BẢNG ĐIỀU KHIỂN" Foreground="White" FontSize="20" 
+                                 FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
+                        <Border Height="2" Background="#9b59b6" Margin="50,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10,0">
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="MyVehicles_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🚗" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Phương Tiện Của Tôi" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="Schedule_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📅" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Đặt Lịch Kiểm Định" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="InspectionHistory_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📋" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Lịch Sử Kiểm Định" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="Notifications_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🔔" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Thông Báo" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="ProfileManagement_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="👤" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Quản Lý Hồ Sơ" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Border Height="1" Background="#9b59b6" Margin="0,10"/>
+
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="LogoutButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🚪" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Đăng Xuất" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
 
             <!-- Main Content Area -->
             <Grid x:Name="MainContent" Background="#ecf0f1">
                 <!-- Welcome Message (Default View) -->
                 <Grid x:Name="WelcomePanel">
-                    <TextBlock Text="Welcome to Vehicle Owner Dashboard" 
-                             FontSize="24" HorizontalAlignment="Center" 
-                             VerticalAlignment="Top" Margin="0,20,0,0"/>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Chào Mừng Đến Với" 
+                                 FontSize="24" HorizontalAlignment="Center"
+                                 Foreground="#34495e"/>
+                        <TextBlock Text="BẢNG ĐIỀU KHIỂN CHỦ PHƯƠNG TIỆN" 
+                                 FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"
+                                 Foreground="#8e44ad" Margin="0,10"/>
+                        <Border Width="100" Height="4" Background="#8e44ad" Margin="0,10"/>
+                        <TextBlock Text="Vui lòng chọn các tùy chọn từ menu để bắt đầu" 
+                                 FontSize="16" HorizontalAlignment="Center"
+                                 Foreground="#7f8c8d" Margin="0,20"/>
+                    </StackPanel>
                 </Grid>
 
                 <!-- Vehicles Management Panel -->
@@ -41,81 +237,95 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="My Vehicles" 
+                    <TextBlock Text="Phương Tiện Của Tôi" 
                              FontSize="24" 
                              FontWeight="Bold" 
+                             Foreground="#2c3e50"
                              Margin="0,0,0,20"/>
 
                     <Button Grid.Row="1" 
-                            Content="Add New Vehicle" 
+                            Style="{StaticResource GreenButtonStyle}"
                             HorizontalAlignment="Right"
-                            Width="150"
-                            Height="35"
-                            Background="#2ecc71"
-                            Foreground="White"
+                            Width="180"
                             Margin="0,0,0,20"
-                            Click="AddVehicle_Click"/>
+                            Click="AddVehicle_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="+" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="Thêm Phương Tiện Mới" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
                     <!-- Vehicles DataGrid -->
-                    <DataGrid Grid.Row="2" 
-                             x:Name="VehiclesGrid"
-                             AutoGenerateColumns="False"
-                             IsReadOnly="True"
-                             SelectionMode="Single"
-                             CanUserAddRows="False"
-                             BorderThickness="1"
-                             BorderBrush="#dcdde1">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Plate Number" 
-                                              Binding="{Binding PlateNumber}"
-                                              Width="*"/>
-                            <DataGridTextColumn Header="Brand" 
-                                              Binding="{Binding Brand}"
-                                              Width="*"/>
-                            <DataGridTextColumn Header="Model" 
-                                              Binding="{Binding Model}"
-                                              Width="*"/>
-                            <DataGridTextColumn Header="Year" 
-                                              Binding="{Binding ManufactureYear}"
-                                              Width="100"/>
-                            <DataGridTextColumn Header="Engine Number" 
-                                              Binding="{Binding EngineNumber}"
-                                              Width="*"/>
-                            <DataGridTemplateColumn Width="150">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Content="Edit" 
-                                                    Width="60"
-                                                    Margin="5"
-                                                    Background="#3498db"
-                                                    Foreground="White"
-                                                    Click="EditVehicle_Click"/>
-                                            <Button Content="Delete" 
-                                                    Width="60"
-                                                    Margin="5"
-                                                    Background="#e74c3c"
-                                                    Foreground="White"
-                                                    Click="DeleteVehicle_Click"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                        <DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
-                                <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="#3498db"/>
-                                        <Setter Property="Foreground" Value="White"/>
-                                    </Trigger>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#f5f6fa"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.RowStyle>
-                    </DataGrid>
+                    <Border Grid.Row="2" Background="White" BorderBrush="#bdc3c7" 
+                          BorderThickness="1" CornerRadius="4" Padding="0">
+                        <DataGrid x:Name="VehiclesGrid"
+                                 AutoGenerateColumns="False"
+                                 IsReadOnly="True"
+                                 SelectionMode="Single"
+                                 CanUserAddRows="False"
+                                 BorderThickness="0"
+                                 RowHeaderWidth="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Biển Số Xe" 
+                                                  Binding="{Binding PlateNumber}"
+                                                  Width="*"/>
+                                <DataGridTextColumn Header="Hãng Xe" 
+                                                  Binding="{Binding Brand}"
+                                                  Width="*"/>
+                                <DataGridTextColumn Header="Mẫu Xe" 
+                                                  Binding="{Binding Model}"
+                                                  Width="*"/>
+                                <DataGridTextColumn Header="Năm SX" 
+                                                  Binding="{Binding ManufactureYear}"
+                                                  Width="100"/>
+                                <DataGridTextColumn Header="Số Máy" 
+                                                  Binding="{Binding EngineNumber}"
+                                                  Width="*"/>
+                                <DataGridTemplateColumn Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Width="60"
+                                                        Margin="5"
+                                                        Background="#3498db"
+                                                        Foreground="White"
+                                                        Click="EditVehicle_Click">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="✎" FontSize="12" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                        <TextBlock Text="Sửa" VerticalAlignment="Center"/>
+                                                    </StackPanel>
+                                                </Button>
+                                                <Button Width="60"
+                                                        Margin="5"
+                                                        Background="#e74c3c"
+                                                        Foreground="White"
+                                                        Click="DeleteVehicle_Click">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="✕" FontSize="12" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                                        <TextBlock Text="Xóa" VerticalAlignment="Center"/>
+                                                    </StackPanel>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Height" Value="40"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#d6eaf8"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#ebf5fb"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                        </DataGrid>
+                    </Border>
                 </Grid>
 
                 <!-- Schedule Panel -->
@@ -127,64 +337,72 @@
                     </Grid.RowDefinitions>
 
                     <!-- Header -->
-                    <TextBlock Text="Schedule Inspection" 
+                    <TextBlock Text="Đặt Lịch Kiểm Định" 
                              FontSize="24" 
                              FontWeight="Bold"
+                             Foreground="#2c3e50"
                              Margin="0,0,0,20"/>
 
                     <!-- Form -->
-                    <StackPanel Grid.Row="1" Margin="0,10">
-                        <!-- Select Vehicle -->
-                        <TextBlock Text="Select Vehicle:" Margin="0,5"/>
-                        <ComboBox x:Name="VehicleComboBox"
-                                 Margin="0,5"
-                                 Height="35"
-                                 DisplayMemberPath="PlateNumber"
-                                 SelectedValuePath="VehicleID"/>
+                    <Border Grid.Row="1" Background="White" BorderBrush="#bdc3c7" 
+                          BorderThickness="1" CornerRadius="8" Padding="25">
+                        <StackPanel>
+                            <!-- Select Vehicle -->
+                            <TextBlock Text="Chọn Phương Tiện:" Margin="0,5" FontWeight="SemiBold"/>
+                            <ComboBox x:Name="VehicleComboBox"
+                                     Margin="0,5,0,15"
+                                     DisplayMemberPath="PlateNumber"
+                                     SelectedValuePath="VehicleID"/>
 
-                        <!-- Select Station -->
-                        <TextBlock Text="Select Inspection Station:" Margin="0,15,0,5"/>
-                        <ComboBox x:Name="StationComboBox"
-                                 Margin="0,5"
-                                 Height="35"
-                                 DisplayMemberPath="Name"
-                                 SelectedValuePath="StationID"/>
+                            <!-- Select Station -->
+                            <TextBlock Text="Chọn Trạm Kiểm Định:" Margin="0,5" FontWeight="SemiBold"/>
+                            <ComboBox x:Name="StationComboBox"
+                                     Margin="0,5,0,15"
+                                     DisplayMemberPath="Name"
+                                     SelectedValuePath="StationID"/>
 
-                        <!-- Select Date -->
-                        <TextBlock Text="Select Date and Time:" Margin="0,15,0,5"/>
-                        <DatePicker x:Name="DatePicker" 
-                                  Margin="0,5"
-                                  Height="35"/>
-                        <ComboBox x:Name="TimeComboBox"
-                                 Margin="0,5"
-                                 Height="35">
-                            <ComboBoxItem Content="09:00"/>
-                            <ComboBoxItem Content="10:00"/>
-                            <ComboBoxItem Content="11:00"/>
-                            <ComboBoxItem Content="13:30"/>
-                            <ComboBoxItem Content="14:30"/>
-                            <ComboBoxItem Content="15:30"/>
-                        </ComboBox>
-                    </StackPanel>
+                            <!-- Select Date -->
+                            <TextBlock Text="Chọn Ngày:" Margin="0,5" FontWeight="SemiBold"/>
+                            <DatePicker x:Name="DatePicker" 
+                                      Margin="0,5,0,15"
+                                      Height="35"/>
+
+                            <!-- Select Time -->
+                            <TextBlock Text="Chọn Giờ:" Margin="0,5" FontWeight="SemiBold"/>
+                            <ComboBox x:Name="TimeComboBox"
+                                     Margin="0,5,0,15">
+                                <ComboBoxItem Content="09:00"/>
+                                <ComboBoxItem Content="10:00"/>
+                                <ComboBoxItem Content="11:00"/>
+                                <ComboBoxItem Content="13:30"/>
+                                <ComboBoxItem Content="14:30"/>
+                                <ComboBoxItem Content="15:30"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Border>
 
                     <!-- Buttons -->
                     <StackPanel Grid.Row="2" 
                               Orientation="Horizontal"
                               HorizontalAlignment="Right"
                               Margin="0,20,0,0">
-                        <Button Content="Schedule"
+                        <Button Style="{StaticResource GreenButtonStyle}"
                                 Width="120"
-                                Height="35"
-                                Background="#2ecc71"
-                                Foreground="White"
                                 Click="ScheduleButton_Click"
-                                Margin="0,0,10,0"/>
-                        <Button Content="Cancel"
+                                Margin="0,0,10,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="✓" FontSize="14" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <TextBlock Text="Đặt Lịch" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Style="{StaticResource RedButtonStyle}"
                                 Width="120"
-                                Height="35"
-                                Background="#e74c3c"
-                                Foreground="White"
-                                Click="CancelScheduleButton_Click"/>
+                                Click="CancelScheduleButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="✕" FontSize="14" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <TextBlock Text="Hủy" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Grid>

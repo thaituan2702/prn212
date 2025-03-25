@@ -1,9 +1,7 @@
 ﻿using System.Windows;
-using VehicleEmissionManagement.UI.ViewModelss;
-using VehicleEmissionManagement.UI.Viewss;
-using Microsoft.Extensions.DependencyInjection;
 using VehicleEmissionManagement.Core.Interfacess;
 using VehicleEmissionManagement.UI.ViewModelss;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace VehicleEmissionManagement.UI.Viewss
 {
@@ -15,7 +13,6 @@ namespace VehicleEmissionManagement.UI.Viewss
             var userRepository = ((App)Application.Current)._serviceProvider.GetService<IUserRepository>();
             DataContext = new AdminViewModel(userRepository);
         }
-
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {

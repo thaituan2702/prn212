@@ -1,0 +1,527 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.core\\servicess\\stationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|solutionrelative:vehicleemissionmanagement.core\\servicess\\stationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.core\\servicess\\policeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|solutionrelative:vehicleemissionmanagement.core\\servicess\\policeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.core\\servicess\\ownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|solutionrelative:vehicleemissionmanagement.core\\servicess\\ownerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.core\\servicess\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4E6D5A0-F62B-4718-A82A-B307E3568144}|VehicleEmissionManagement.Core\\VehicleEmissionManagement.Core.csproj|solutionrelative:vehicleemissionmanagement.core\\servicess\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\admindashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewmodelss\\adminviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewmodelss\\adminviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\admindashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\stationdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\stationdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\stationdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\stationdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\vehiclesearchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\vehiclesearchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\vehicledialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\vehicledialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\userdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\userdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\registerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\registerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\profilemanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\profilemanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\policedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\policedashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\ownerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\ownerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\notificationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\notificationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectioninputview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectioninputview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectioninputdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectioninputdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectionhistoryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectionhistoryview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectionhistory1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectionhistory1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectiondetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectiondetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\appointmentmanagementview2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\appointmentmanagementview2.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\appointmentmanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\appointmentmanagementview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\scheduleinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\scheduleinspection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewss\\inspectiondetailsdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewss\\inspectiondetailsdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|c:\\users\\trant\\onedrive\\desktop\\thi\\prn212\\prn212\\vehicleemissionmanagement.ui\\viewmodelss\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F202693-9ABE-4B94-B7EB-9B2949358BDB}|VehicleEmissionManagement.UI\\VehicleEmissionManagement.UI.csproj|solutionrelative:vehicleemissionmanagement.ui\\viewmodelss\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\appsettings.json",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\appsettings.json",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\appsettings.json",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-25T04:01:40.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StationService.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\StationService.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.Core\\Servicess\\StationService.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\StationService.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.Core\\Servicess\\StationService.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T04:01:20.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PoliceService.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\PoliceService.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.Core\\Servicess\\PoliceService.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\PoliceService.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.Core\\Servicess\\PoliceService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T04:01:20.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OwnerService.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\OwnerService.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.Core\\Servicess\\OwnerService.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\OwnerService.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.Core\\Servicess\\OwnerService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T04:01:18.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\AuthService.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.Core\\Servicess\\AuthService.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.Core\\Servicess\\AuthService.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.Core\\Servicess\\AuthService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T04:01:15.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\ViewModelss\\AdminViewModel.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\ViewModelss\\AdminViewModel.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\ViewModelss\\AdminViewModel.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\ViewModelss\\AdminViewModel.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T04:00:23.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StationDashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:24:14.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StationDashboard.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\StationDashboard.xaml.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:25:18.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RegisterView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\RegisterView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\RegisterView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\RegisterView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\RegisterView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:32:00.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminDashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:30:21.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VehicleSearchView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\VehicleSearchView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\VehicleSearchView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\VehicleSearchView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\VehicleSearchView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:32:34.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminDashboard.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\AdminDashboard.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:30:28.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VehicleDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\VehicleDialog.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\VehicleDialog.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\VehicleDialog.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\VehicleDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:32:27.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\UserDialog.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\UserDialog.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\UserDialog.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\UserDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:32:20.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProfileManagement.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\ProfileManagement.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\ProfileManagement.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\ProfileManagement.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\ProfileManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:31:54.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PoliceDashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\PoliceDashboard.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\PoliceDashboard.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\PoliceDashboard.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\PoliceDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:31:46.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OwnerDashboard.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\OwnerDashboard.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\OwnerDashboard.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\OwnerDashboard.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\OwnerDashboard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:28:52.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NotificationWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\NotificationWindow.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\NotificationWindow.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\NotificationWindow.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\NotificationWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:31:31.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "InspectionInputView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionInputView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionInputView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionInputView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionInputView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T03:50:46.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "InspectionHistoryView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionHistoryView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionHistoryView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionHistoryView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionHistoryView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T03:50:39.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "InspectionDetailsDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:30:42.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AppointmentManagementView2.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView2.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView2.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView2.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView2.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T03:50:31.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "InspectionInputDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionInputDialog.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionInputDialog.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionInputDialog.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionInputDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:31:02.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppointmentManagementView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\AppointmentManagementView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T03:50:28.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "InspectionHistory1.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionHistory1.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionHistory1.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionHistory1.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionHistory1.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:30:54.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\MainWindow.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T03:45:42.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ScheduleInspection.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\ScheduleInspection.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\ScheduleInspection.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\ScheduleInspection.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\ScheduleInspection.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:32:12.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAAACMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:31:19.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-16T13:28:48.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "InspectionDetailsDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\Viewss\\InspectionDetailsDialog.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:30:47.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\ViewModelss\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "VehicleEmissionManagement.UI\\ViewModelss\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\trant\\OneDrive\\Desktop\\thi\\prn212\\prn212\\VehicleEmissionManagement.UI\\ViewModelss\\LoginViewModel.cs",
+              "RelativeToolTip": "VehicleEmissionManagement.UI\\ViewModelss\\LoginViewModel.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAiwGkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T13:30:11.195Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

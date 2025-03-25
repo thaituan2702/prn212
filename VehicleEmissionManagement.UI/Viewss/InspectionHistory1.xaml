@@ -8,22 +8,22 @@
                   AutoGenerateColumns="False" 
                   Margin="10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Inspection Date" 
+                <DataGridTextColumn Header="Ngày Kiểm Định" 
                                   Binding="{Binding InspectionDate, StringFormat=dd/MM/yyyy}"
                                   Width="*"/>
-                <DataGridTextColumn Header="Result" 
+                <DataGridTextColumn Header="Kết Quả" 
                                   Binding="{Binding Result}"
                                   Width="*"/>
-                <DataGridTextColumn Header="CO2 Emission" 
+                <DataGridTextColumn Header="Khí Thải CO2" 
                                   Binding="{Binding CO2Emission}"
                                   Width="*"/>
-                <DataGridTextColumn Header="HC Emission" 
+                <DataGridTextColumn Header="Khí Thải HC" 
                                   Binding="{Binding HCEmission}"
                                   Width="*"/>
-                <DataGridTextColumn Header="NOx Emission" 
+                <DataGridTextColumn Header="Khí Thải NOx" 
                                   Binding="{Binding NOxEmission}"
                                   Width="*"/>
-                <DataGridTextColumn Header="Expiry Date" 
+                <DataGridTextColumn Header="Ngày Hết Hạn" 
                                   Binding="{Binding ExpiryDate, StringFormat=dd/MM/yyyy}"
                                   Width="*"/>
             </DataGrid.Columns>

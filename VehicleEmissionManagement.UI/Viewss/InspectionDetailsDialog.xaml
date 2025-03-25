@@ -1,7 +1,7 @@
 ﻿<Window x:Class="VehicleEmissionManagement.UI.Viewss.InspectionDetailsDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Inspection Details" 
+        Title="Chi Tiết Kiểm Định" 
         Height="500" 
         Width="600"
         WindowStartupLocation="CenterOwner">
@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <TextBlock Text="Inspection Details" 
+        <TextBlock Text="Chi Tiết Kiểm Định" 
                   FontSize="24" 
                   FontWeight="Bold"
                   Margin="0,0,0,20"/>
@@ -21,7 +21,7 @@
         <!-- Details -->
         <ScrollViewer Grid.Row="1">
             <StackPanel>
-                <GroupBox Header="Vehicle Information" Margin="0,0,0,15">
+                <GroupBox Header="Thông Tin Phương Tiện" Margin="0,0,0,15">
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150"/>
@@ -33,22 +33,22 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="Plate Number:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
+                        <TextBlock Text="Biển Số Xe:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
                         <TextBlock Text="{Binding Vehicle.PlateNumber}" Grid.Column="1" Grid.Row="0" Margin="0,5" FontWeight="SemiBold"/>
 
-                        <TextBlock Text="Brand/Model:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
+                        <TextBlock Text="Hãng/Mẫu Xe:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" Margin="0,5" FontWeight="SemiBold">
                             <Run Text="{Binding Vehicle.Brand}"/>
                             <Run Text=" - "/>
                             <Run Text="{Binding Vehicle.Model}"/>
                         </TextBlock>
 
-                        <TextBlock Text="Engine Number:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
+                        <TextBlock Text="Số Máy:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
                         <TextBlock Text="{Binding Vehicle.EngineNumber}" Grid.Column="1" Grid.Row="2" Margin="0,5" FontWeight="SemiBold"/>
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="Inspection Information" Margin="0,0,0,15">
+                <GroupBox Header="Thông Tin Kiểm Định" Margin="0,0,0,15">
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150"/>
@@ -62,36 +62,38 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="Station:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
+                        <TextBlock Text="Trạm Kiểm Định:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
                         <TextBlock Text="{Binding Station.Name}" Grid.Column="1" Grid.Row="0" Margin="0,5" FontWeight="SemiBold"/>
 
-                        <TextBlock Text="Inspection Date:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
+                        <TextBlock Text="Ngày Kiểm Định:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
                         <TextBlock Text="{Binding InspectionDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" 
                                  Grid.Column="1" Grid.Row="1" Margin="0,5" FontWeight="SemiBold"/>
 
-                        <TextBlock Text="Result:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
+                        <TextBlock Text="Kết Quả:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
                         <TextBlock Text="{Binding Result}" Grid.Column="1" Grid.Row="2" Margin="0,5" FontWeight="SemiBold">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Result}" Value="Pass">
                                             <Setter Property="Foreground" Value="#2ecc71"/>
+                                            <Setter Property="Text" Value="Đạt"/>
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding Result}" Value="Fail">
                                             <Setter Property="Foreground" Value="#e74c3c"/>
+                                            <Setter Property="Text" Value="Không Đạt"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </TextBlock.Style>
                         </TextBlock>
 
-                        <TextBlock Text="Expiry Date:" Grid.Column="0" Grid.Row="3" Margin="0,5"/>
+                        <TextBlock Text="Ngày Hết Hạn:" Grid.Column="0" Grid.Row="3" Margin="0,5"/>
                         <TextBlock Text="{Binding ExpiryDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
                                  Grid.Column="1" Grid.Row="3" Margin="0,5" FontWeight="SemiBold"/>
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="Emission Test Results" Margin="0,0,0,15">
+                <GroupBox Header="Kết Quả Kiểm Tra Khí Thải" Margin="0,0,0,15">
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150"/>
@@ -103,19 +105,19 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="CO2 Emission:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
+                        <TextBlock Text="Khí Thải CO2:" Grid.Column="0" Grid.Row="0" Margin="0,5"/>
                         <TextBlock Grid.Column="1" Grid.Row="0" Margin="0,5" FontWeight="SemiBold">
                             <Run Text="{Binding CO2Emission}"/>
                             <Run Text=" g/km"/>
                         </TextBlock>
 
-                        <TextBlock Text="HC Emission:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
+                        <TextBlock Text="Khí Thải HC:" Grid.Column="0" Grid.Row="1" Margin="0,5"/>
                         <TextBlock Grid.Column="1" Grid.Row="1" Margin="0,5" FontWeight="SemiBold">
                             <Run Text="{Binding HCEmission}"/>
                             <Run Text=" ppm"/>
                         </TextBlock>
 
-                        <TextBlock Text="NOx Emission:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
+                        <TextBlock Text="Khí Thải NOx:" Grid.Column="0" Grid.Row="2" Margin="0,5"/>
                         <TextBlock Grid.Column="1" Grid.Row="2" Margin="0,5" FontWeight="SemiBold">
                             <Run Text="{Binding NOxEmission}"/>
                             <Run Text=" ppm"/>
@@ -123,7 +125,7 @@
                     </Grid>
                 </GroupBox>
 
-                <GroupBox Header="Additional Information" Margin="0,0,0,15">
+                <GroupBox Header="Thông Tin Bổ Sung" Margin="0,0,0,15">
                     <TextBox Text="{Binding Comments}" 
                              IsReadOnly="True"
                              TextWrapping="Wrap"
@@ -135,7 +137,7 @@
 
         <!-- Close Button -->
         <Button Grid.Row="2"
-                Content="Close"
+                Content="Đóng"
                 Width="100"
                 Height="30"
                 HorizontalAlignment="Right"

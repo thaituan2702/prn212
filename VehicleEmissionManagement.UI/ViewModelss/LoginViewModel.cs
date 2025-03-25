@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
 using VehicleEmissionManagement.Core.Interfacess;
 using VehicleEmissionManagement.Core.Modelss;
 using VehicleEmissionManagement.UI.Viewss;
@@ -21,6 +23,12 @@ namespace VehicleEmissionManagement.UI.ViewModelss
         [ObservableProperty]
         private string password;
 
+        [ObservableProperty]
+        private bool isEmailError;
+
+        [ObservableProperty]
+        private string emailErrorMessage;
+
         public LoginViewModel(
             IAuthService authService,
             IOwnerService ownerService,
@@ -31,6 +39,10 @@ namespace VehicleEmissionManagement.UI.ViewModelss
             _ownerService = ownerService;
             _vehicleRepository = vehicleRepository;
             _inspectionRepository = inspectionRepository;
+
+            // Khởi tạo giá trị mặc định
+            IsEmailError = false;
+            EmailErrorMessage = "Email phải có định dạng @gmail.com";
         }
 
         [RelayCommand]
@@ -38,9 +50,20 @@ namespace VehicleEmissionManagement.UI.ViewModelss
         {
             try
             {
+                // Reset trạng thái lỗi
+                IsEmailError = false;
+
                 if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
                 {
                     MessageBox.Show("Vui lòng nhập email và mật khẩu");
+                    return;
+                }
+
+                // Kiểm tra định dạng email phải là gmail.com
+                if (!IsValidGmailAddress(Email))
+                {
+                    // Đặt flag hiển thị lỗi thay vì hiện MessageBox
+                    IsEmailError = true;
                     return;
                 }
 
@@ -80,6 +103,17 @@ namespace VehicleEmissionManagement.UI.ViewModelss
                 Debug.WriteLine($"Login error: {ex}");
                 MessageBox.Show($"Lỗi đăng nhập: {ex.Message}");
             }
+        }
+
+        // Hàm kiểm tra email có phải định dạng @gmail.com không
+        private bool IsValidGmailAddress(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            // Kiểm tra email có định dạng hợp lệ và kết thúc bằng @gmail.com
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            return Regex.IsMatch(email, pattern);
         }
 
         [RelayCommand]

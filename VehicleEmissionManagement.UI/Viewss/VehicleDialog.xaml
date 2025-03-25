@@ -1,7 +1,7 @@
 ﻿<Window x:Class="VehicleEmissionManagement.UI.Viewss.VehicleDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Vehicle Information" 
+        Title="Thông Tin Phương Tiện" 
         Height="621" 
         Width="500"
         WindowStartupLocation="CenterScreen">
@@ -11,59 +11,52 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
         <!-- Header -->
         <TextBlock Grid.Row="0" 
-                   Text="Vehicle Information"
+                   Text="Thông Tin Phương Tiện"
                    FontSize="24" 
                    FontWeight="Bold" 
                    Margin="0,0,0,20"/>
-
         <!-- Form -->
         <StackPanel Grid.Row="1" Margin="0,10">
-            <TextBlock Text="Plate Number:" Margin="0,5"/>
+            <TextBlock Text="Biển Số Xe:" Margin="0,5"/>
             <TextBox x:Name="TxtPlateNumber" 
                      Margin="0,5" 
                      Padding="5"
                      Text="{Binding PlateNumber, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <TextBlock Text="Brand:" Margin="0,5"/>
+            <TextBlock Text="Hãng Xe:" Margin="0,5"/>
             <TextBox x:Name="TxtBrand" 
                      Margin="0,5" 
                      Padding="5"
                      Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <TextBlock Text="Model:" Margin="0,5"/>
+            <TextBlock Text="Mẫu Xe:" Margin="0,5"/>
             <TextBox x:Name="TxtModel" 
                      Margin="0,5" 
                      Padding="5"
                      Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <TextBlock Text="Manufacture Year:" Margin="0,5" Height="53"/>
+            <TextBlock Text="Năm Sản Xuất:" Margin="0,5" Height="53"/>
             <TextBox x:Name="TxtYear" 
                      Padding="5"
                      Text="{Binding ManufactureYear, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <TextBlock Text="Engine Number:" Margin="0,5"/>
+            <TextBlock Text="Số Máy:" Margin="0,5"/>
             <TextBox x:Name="TxtEngineNumber" 
                      Margin="0,5" 
                      Padding="5"
                      Text="{Binding EngineNumber, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
-
         <!-- Buttons -->
         <StackPanel Grid.Row="2" 
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
                     Margin="0,22,-11,-2">
-            <Button Content="Save"
+            <Button Content="Lưu"
                     Width="100"
                     Height="35"
                     Background="#2ecc71"
                     Foreground="White"
                     Click="SaveButton_Click"
                     Margin="0,0,10,0"/>
-            <Button Content="Cancel"
+            <Button Content="Hủy"
                     Width="100"
                     Height="35"
                     Background="#e74c3c"

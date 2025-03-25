@@ -15,39 +15,158 @@
             <converters:PendingToVisibilityConverter x:Key="PendingToVisibilityConverter"/>
             <converters:ConfirmedToVisibilityConverter x:Key="ConfirmedToVisibilityConverter"/>
 
-            <!-- Style for menu buttons -->
+            <!-- Style cho các Button Menu -->
             <Style x:Key="MenuButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="Height" Value="45"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="Margin" Value="5,3"/>
+                <Setter Property="Margin" Value="0,5"/>
+                <Setter Property="Padding" Value="15,0"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                <Setter Property="Padding" Value="15,0,0,0"/>
+                <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     CornerRadius="4">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                                                  Margin="{TemplateBinding Padding}"/>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                VerticalAlignment="Center" 
+                                                Margin="{TemplateBinding Padding}"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#218c54"/>
-                                    <Setter Property="Cursor" Value="Hand"/>
+                                    <Setter Property="Background" Value="#9b59b6"/>
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background" Value="#1a6e42"/>
+                                    <Setter Property="Background" Value="#8e44ad"/>
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
+            </Style>
+
+            <!-- Style cho các Action Button -->
+            <Style x:Key="ActionButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="#3498db"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Height" Value="35"/>
+                <Setter Property="Padding" Value="15,0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#2980b9"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#1f6aa6"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style cho các Green Button -->
+            <Style x:Key="GreenButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+                <Setter Property="Background" Value="#2ecc71"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#27ae60"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#219651"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style cho các Red Button -->
+            <Style x:Key="RedButtonStyle" TargetType="Button" BasedOn="{StaticResource ActionButtonStyle}">
+                <Setter Property="Background" Value="#e74c3c"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="4">
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center" 
+                                                Margin="{TemplateBinding Padding}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#c0392b"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#a33025"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style cho DataGrid -->
+            <Style TargetType="DataGrid">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="#bdc3c7"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="RowBackground" Value="White"/>
+                <Setter Property="AlternatingRowBackground" Value="#f9f9f9"/>
+                <Setter Property="HorizontalGridLinesBrush" Value="#ecf0f1"/>
+                <Setter Property="VerticalGridLinesBrush" Value="#ecf0f1"/>
+                <Setter Property="RowHeaderWidth" Value="0"/>
+            </Style>
+
+            <!-- Style cho DataGrid Header -->
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#34495e"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Padding" Value="10,8"/>
+                <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                <Setter Property="BorderBrush" Value="#2c3e50"/>
+            </Style>
+
+            <!-- Style cho DataGrid Row -->
+            <Style TargetType="DataGridRow">
+                <Setter Property="Height" Value="40"/>
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background" Value="#d6eaf8"/>
+                        <Setter Property="BorderBrush" Value="#3498db"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#ebf5fb"/>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
         </ResourceDictionary>
     </Window.Resources>
@@ -59,64 +178,88 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left Menu Panel -->
-        <Grid Grid.Column="0" Background="#27ae60">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
+        <Border Grid.Column="0" Background="#8e44ad" CornerRadius="0,15,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <!-- Logo & Title -->
-            <StackPanel Grid.Row="0" Margin="15,30,15,40">
-                <TextBlock Text="TRẠM ĐĂNG KIỂM" 
-                           Foreground="White" 
-                           FontSize="22" 
-                           FontWeight="Bold"
-                           TextAlignment="Center"/>
-                <TextBlock Text="Hệ thống quản lý" 
-                           Foreground="White" 
-                           FontSize="14"
-                           TextAlignment="Center"
-                           Margin="0,5,0,0"/>
-            </StackPanel>
+                <!-- Logo & Title -->
+                <StackPanel Grid.Row="0" Margin="0,30,0,40">
+                    <TextBlock Text="TRẠM ĐĂNG KIỂM" 
+                            Foreground="White" 
+                            FontSize="22" 
+                            FontWeight="Bold"
+                            TextAlignment="Center"/>
+                    <TextBlock Text="Hệ thống quản lý" 
+                            Foreground="White" 
+                            FontSize="14"
+                            TextAlignment="Center"
+                            Margin="0,5,0,0"/>
+                    <Border Height="2" Background="#9b59b6" Margin="50,10,50,0"/>
+                </StackPanel>
 
-            <!-- Menu Items -->
-            <StackPanel Grid.Row="1" Margin="10,0">
-                <Button Content="Lịch hẹn đăng kiểm" 
-                        Style="{StaticResource MenuButtonStyle}" 
-                        Click="AppointmentManagement_Click"/>
+                <!-- Menu Items -->
+                <StackPanel Grid.Row="1" Margin="10,0">
+                    <Button Style="{StaticResource MenuButtonStyle}" Click="AppointmentManagement_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📅" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock Text="Lịch hẹn đăng kiểm" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
-                <Button Content="Báo cáo thống kê" 
-                        Style="{StaticResource MenuButtonStyle}" 
-                        Click="Reports_Click"/>
+                    <Button Style="{StaticResource MenuButtonStyle}" Click="Reports_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="📊" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBlock Text="Báo cáo thống kê" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
-                <Button Content="Thông báo" 
-                        Style="{StaticResource MenuButtonStyle}" 
-                        Click="Notifications_Click"/>
 
-                <Button Content="Thông tin trạm" 
-                        Style="{StaticResource MenuButtonStyle}" 
-                        Click="StationProfile_Click"/>
-            </StackPanel>
 
-            <!-- User Info & Logout -->
-            <StackPanel Grid.Row="2" Margin="15,0,15,20">
-                <Separator Background="#ffffff" Opacity="0.2" Margin="0,0,0,15"/>
+                    
+                </StackPanel>
 
-                <TextBlock Text="{Binding CurrentUserName, StringFormat='Xin chào, {0}'}" 
-                           Foreground="White" 
-                           Margin="5,0,0,5"/>
+                <!-- User Info & Logout -->
+                <StackPanel Grid.Row="2" Margin="15,0,15,20">
+                    <Border Height="1" Background="#9b59b6" Margin="0,10,0,15"/>
 
-                <Button Content="Đăng xuất" 
-                        Style="{StaticResource MenuButtonStyle}" 
-                        Background="#e74c3c"
-                        Click="LogoutButton_Click"/>
-            </StackPanel>
-        </Grid>
+                    <TextBlock Text="{Binding CurrentUserName, StringFormat='Xin chào, {0}'}" 
+                            Foreground="White" 
+                            Margin="10,0,0,10"
+                            FontSize="14"/>
+
+                    <Button Style="{StaticResource RedButtonStyle}" Click="LogoutButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🚪" FontSize="14" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBlock Text="Đăng xuất" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
 
         <!-- Main Content Area -->
-        <Grid Grid.Column="1" Background="#f5f5f5">
-            <Grid x:Name="MainContent"/>
+        <Grid Grid.Column="1" Background="#ecf0f1">
+            <Grid x:Name="MainContent">
+                <!-- Welcome Panel (Default) -->
+                <Grid x:Name="WelcomePanel">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Chào Mừng Đến Với" 
+                                 FontSize="24" HorizontalAlignment="Center"
+                                 Foreground="#34495e"/>
+                        <TextBlock Text="HỆ THỐNG QUẢN LÝ TRẠM ĐĂNG KIỂM" 
+                                 FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"
+                                 Foreground="#8e44ad" Margin="0,10"/>
+                        <Border Width="100" Height="4" Background="#8e44ad" Margin="0,10"/>
+                        <TextBlock Text="Vui lòng chọn các tùy chọn từ menu để bắt đầu" 
+                                 FontSize="16" HorizontalAlignment="Center"
+                                 Foreground="#7f8c8d" Margin="0,20"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

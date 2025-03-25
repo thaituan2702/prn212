@@ -5,83 +5,210 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VehicleEmissionManagement.UI.Viewss"
         mc:Ignorable="d"
-        Title="Police Dashboard" Height="600" Width="1000">
+        Title="Bảng Điều Khiển Cảnh Sát" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!-- Style cho các Button Menu -->
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#3498db"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#2980b9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho Action Button -->
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#3498db"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Padding" Value="15,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center" 
+                                            Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2980b9"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1f6aa6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho DataGrid -->
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#bdc3c7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowBackground" Value="White"/>
+            <Setter Property="AlternatingRowBackground" Value="#f9f9f9"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="#ecf0f1"/>
+            <Setter Property="VerticalGridLinesBrush" Value="#ecf0f1"/>
+            <Setter Property="RowHeaderWidth" Value="0"/>
+        </Style>
+
+        <!-- Style cho DataGrid Header -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#34495e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="BorderThickness" Value="0,0,1,0"/>
+            <Setter Property="BorderBrush" Value="#2c3e50"/>
+        </Style>
+
+        <!-- Style cho DataGrid Row -->
+        <Style TargetType="DataGridRow">
+            <Setter Property="Height" Value="40"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#d6eaf8"/>
+                    <Setter Property="BorderBrush" Value="#3498db"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ebf5fb"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <DockPanel>
             <!-- Left Menu Panel -->
-            <StackPanel DockPanel.Dock="Left" Background="#2980b9" Width="200" Margin="0,0,10,0">
-                <TextBlock Text="Police Dashboard" 
-                         Foreground="White" 
-                         FontSize="20" 
-                         TextAlignment="Center"
-                         Margin="0,20,0,40"/>
+            <Border DockPanel.Dock="Left" Background="#8e44ad" Width="220" CornerRadius="0,15,0,0">
+                <StackPanel>
+                    <StackPanel Margin="0,30,0,40">
+                        <TextBlock Text="BẢNG ĐIỀU KHIỂN" Foreground="White" FontSize="20" 
+                                 FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
+                        <TextBlock Text="CẢNH SÁT" Foreground="White" FontSize="20" 
+                                 FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
+                        <Border Height="2" Background="#9b59b6" Margin="50,0"/>
+                    </StackPanel>
 
-                <Button Content="Vehicle Search" 
-                        Click="SearchVehicle_Click"
-                        Margin="10,5" 
-                        Height="40"/>
+                    <StackPanel Margin="10,0">
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="SearchVehicle_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🔍" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Tìm Kiếm Phương Tiện" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
 
-                <Button Content="Violation Records" 
-                        Click="Violations_Click"
-                        Margin="10,5" 
-                        Height="40"/>
+                        <Border Height="1" Background="#9b59b6" Margin="0,10"/>
 
-            
-
-                <Button Content="Logout" 
-                        Click="LogoutButton_Click"
-                        Margin="10,5" 
-                        Height="40"/>
-            </StackPanel>
+                        <Button Style="{StaticResource MenuButtonStyle}" Click="LogoutButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🚪" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <TextBlock Text="Đăng Xuất" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
 
             <!-- Main Content Area -->
-            <Grid Background="#ecf0f1" Margin="10">
+            <Grid Background="#ecf0f1">
                 <!-- Welcome Panel -->
                 <Grid x:Name="WelcomePanel" 
                       Visibility="Visible">
-                    <TextBlock Text="Welcome to Police Dashboard" 
-                             FontSize="24" 
-                             HorizontalAlignment="Center" 
-                             VerticalAlignment="Center"/>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Chào Mừng Đến Với" 
+                                 FontSize="24" HorizontalAlignment="Center"
+                                 Foreground="#34495e"/>
+                        <TextBlock Text="BẢNG ĐIỀU KHIỂN CẢNH SÁT" 
+                                 FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"
+                                 Foreground="#8e44ad" Margin="0,10"/>
+                        <Border Width="100" Height="4" Background="#8e44ad" Margin="0,10"/>
+                        <TextBlock Text="Vui lòng chọn các tùy chọn từ menu để bắt đầu" 
+                                 FontSize="16" HorizontalAlignment="Center"
+                                 Foreground="#7f8c8d" Margin="0,20"/>
+                    </StackPanel>
                 </Grid>
 
                 <!-- Search Panel -->
                 <local:VehicleSearchView x:Name="SearchPanel" 
                                        Visibility="Collapsed"
-                                       DataContext="{Binding}"/>
+                                       DataContext="{Binding}"
+                                       Margin="20"/>
 
                 <!-- Violations Panel -->
                 <Grid x:Name="ViolationsPanel" 
-                      Visibility="Collapsed">
-                    <DockPanel>
-                        <TextBlock Text="Violation Records" 
-                                 FontSize="24" 
-                                 DockPanel.Dock="Top"
-                                 Margin="0,0,0,20"/>
+                      Visibility="Collapsed"
+                      Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
+                    <TextBlock Text="Biên Bản Vi Phạm" 
+                             FontSize="24" 
+                             FontWeight="Bold"
+                             Foreground="#2c3e50"
+                             Margin="0,0,0,20"/>
+
+                    <Border Grid.Row="1" Background="White" BorderBrush="#bdc3c7" 
+                          BorderThickness="1" CornerRadius="4" Padding="0">
                         <DataGrid ItemsSource="{Binding InspectionRecords}"
                                  AutoGenerateColumns="False"
                                  IsReadOnly="True"
-                                 Margin="0,10,0,0">
+                                 BorderThickness="0"
+                                 SelectionMode="Single"
+                                 SelectionUnit="FullRow">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Vehicle" 
+                                <DataGridTextColumn Header="Phương Tiện" 
                                                   Binding="{Binding Vehicle.PlateNumber}"
                                                   Width="*"/>
-                                <DataGridTextColumn Header="Inspection Date" 
+                                <DataGridTextColumn Header="Ngày Kiểm Định" 
                                                   Binding="{Binding InspectionDate, StringFormat=dd/MM/yyyy}"
                                                   Width="*"/>
-                                <DataGridTextColumn Header="Result" 
+                                <DataGridTextColumn Header="Kết Quả" 
                                                   Binding="{Binding Result}"
                                                   Width="*"/>
-                                <DataGridTextColumn Header="Expiry Date" 
+                                <DataGridTextColumn Header="Ngày Hết Hạn" 
                                                   Binding="{Binding ExpiryDate, StringFormat=dd/MM/yyyy}"
                                                   Width="*"/>
-                                <DataGridTextColumn Header="Comments" 
+                                <DataGridTextColumn Header="Ghi Chú" 
                                                   Binding="{Binding Comments}"
-                                                  Width="*"/>
+                                                  Width="1.5*"/>
                             </DataGrid.Columns>
                         </DataGrid>
-                    </DockPanel>
+                    </Border>
                 </Grid>
             </Grid>
         </DockPanel>
